@@ -27,7 +27,7 @@ anim.translateX(2, 2, 30, 0.1);
 
 ```
 
-See the project in Sample folder for more ideas on how to use conanim in your own projects.
+See the Sample.cpp file for more ideas on how to use conanim in your own projects.
 
 ## List of animations
 
