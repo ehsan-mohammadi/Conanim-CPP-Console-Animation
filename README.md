@@ -2,6 +2,8 @@
 
 > C++ Development in Microsoft® Visual Studio
 
+با استفاده از این هدر فایل میتونید از تعدادی انیمیشن طراحی شده در محیط کنسول سی پلاس پلاس استفاده کنید
+
 conanim is an animation header file for C++ console application.
 
 With conanim, you can set animation and use it in your console application project. 
