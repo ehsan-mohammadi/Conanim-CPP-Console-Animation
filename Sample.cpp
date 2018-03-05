@@ -32,9 +32,9 @@ int main()
 
 			// Move a car to right and left
 			Animation anim = Animation("    ______\n"
-									   " __/      \\___\n"
-									   "|             |\n"
-								   	   "|_( )_____( )_|\n");
+						   " __/      \\___\n"
+						   "|             |\n"
+						   "|_( )_____( )_|\n");
 			anim.translateX(2, 2, 30, 0.1);
 			anim.translateX(30, 2, 2, 0.1);
 			_getch();
@@ -45,8 +45,8 @@ int main()
 
 			// Move a rabbit to down and up
 			Animation anim = Animation("(\\_/)\n"
-									   "( .,.)\n"
-								   	   "(~)_(~)\n");
+						   "( .,.)\n"
+						   "(~)_(~)\n");
 			anim.translateY(20, 2, 15, 0.2);
 			anim.translateY(20, 15, 2, 0.2);
 			_getch();
@@ -57,17 +57,17 @@ int main()
 
 			// Wink a cat
 			Animation anim = Animation("   _.---.._             _.---...__\n"
-									   ".-'   /\\   \\          .'  /\\     /\n"
-									   "`.   (  )   \\        /   (  )   /\n"
-									   "  `.  \\/   .'\\      /`.   \\/  .'\n"
-									   "    ``---''   )    (   ``---''\n"
-									   "            .';.--.;`.\n"
-									   "          .' /_...._\\ `.\n"
-									   "        .'   `.a  a.'   `.\n"
-									   "       (        \\/        )\n"
-									   "        `.___..-'`-..___.'\n"
-									   "           \\          /\n"
-									   "            `-.____.-' \n");
+						   ".-'   /\\   \\          .'  /\\     /\n"
+						   "`.   (  )   \\        /   (  )   /\n"
+						   "  `.  \\/   .'\\      /`.   \\/  .'\n"
+						   "    ``---''   )    (   ``---''\n"
+						   "            .';.--.;`.\n"
+						   "          .' /_...._\\ `.\n"
+						   "        .'   `.a  a.'   `.\n"
+						   "       (        \\/        )\n"
+						   "        `.___..-'`-..___.'\n"
+						   "           \\          /\n"
+						   "            `-.____.-' \n");
 			anim.wink(4, 4, 6, 0.5);
 			_getch();
 		}
@@ -77,23 +77,23 @@ int main()
 
 			// Colorize a body builder
 			Animation anim = Animation("_______oBBBBB8o______oBBBBBBB\n"
-									   "_____o8BBBBBBBBBBB__BBBBBBBBB8________o88o,\n"
-									   "___o8BBBBBB**8BBBB__BBBBBBBBBB_____oBBBBBBBo,\n"
-									   "__oBBBBBBB*___***___BBBBBBBBBB_____BBBBBBBBBBo,\n"
-									   "_8BBBBBBBBBBooooo___*BBBBBBB8______*BB*_8BBBBBBo,\n"
-									   "_8BBBBBBBBBBBBBBBB8ooBBBBBBB8___________8BBBBBBB8,\n"
-									   "__*BBBBBBBBBBBBBBBBBBBBBBBBBB8_o88BB88BBBBBBBBBBBB,\n"
-									   "____*BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB8,\n"
-									   "______**8BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB*,\n"
-									   "___________*BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB8*,\n"
-									   "____________*BBBBBBBBBBBBBBBBBBBBBBBB8888**,\n"
-									   "_____________BBBBBBBBBBBBBBBBBBBBBBB*,\n"
-									   "_____________*BBBBBBBBBBBBBBBBBBBBB*,\n"
-									   "______________*BBBBBBBBBBBBBBBBBB8,\n"
-									   "_______________*BBBBBBBBBBBBBBBB*,\n"
-									   "________________8BBBBBBBBBBBBBBB8,\n"
-									   "_________________8BBBBBBBBBBBBBBBo,\n"
-									   "__________________BBBBBBBBBBBBBBB8,\n");
+						   "_____o8BBBBBBBBBBB__BBBBBBBBB8________o88o,\n"
+						   "___o8BBBBBB**8BBBB__BBBBBBBBBB_____oBBBBBBBo,\n"
+						   "__oBBBBBBB*___***___BBBBBBBBBB_____BBBBBBBBBBo,\n"
+						   "_8BBBBBBBBBBooooo___*BBBBBBB8______*BB*_8BBBBBBo,\n"
+						   "_8BBBBBBBBBBBBBBBB8ooBBBBBBB8___________8BBBBBBB8,\n"
+						   "__*BBBBBBBBBBBBBBBBBBBBBBBBBB8_o88BB88BBBBBBBBBBBB,\n"
+						   "____*BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB8,\n"
+						   "______**8BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB*,\n"
+						   "___________*BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB8*,\n"
+						   "____________*BBBBBBBBBBBBBBBBBBBBBBBB8888**,\n"
+						   "_____________BBBBBBBBBBBBBBBBBBBBBBB*,\n"
+						   "_____________*BBBBBBBBBBBBBBBBBBBBB*,\n"
+						   "______________*BBBBBBBBBBBBBBBBBB8,\n"
+						   "_______________*BBBBBBBBBBBBBBBB*,\n"
+						   "________________8BBBBBBBBBBBBBBB8,\n"
+						   "_________________8BBBBBBBBBBBBBBBo,\n"
+						   "__________________BBBBBBBBBBBBBBB8,\n");
 			anim.colorize(4, 4, 20, 0.5);
 			_getch();
 		}
@@ -114,27 +114,27 @@ int main()
 
 			// Extend to down Aladdin face
 			Animation anim = Animation("     ::::` ::::::::`` :::::::`   .ue@$$ `:::::::::::::::::::::\n"
-									   "     ::` .:::::::``z, :::::`.e$$$$$$$$$$.`::::::::::::::::::::\n"
-									   "    :` :::::::``,e$$$r`::: $$$$??'     `?b_ `::::::::::::::::::\n"
-									   "   ' :::::::` ,?'   `?b,_` R$'     .,,.   `'iu ````:::::::::::::\n"
-									   "    ::::::`   <  .,.   `?e. $$eeee$$$F???$ee,3$c   ..````::::::::.\n"
-									   "   ::::::  ::  R$$$$$$$$e4$ $$$$$$$'e     3$$$$$.:.  ``:::::::::``:.\n"
-									   "  `:::::: :::::`$F.   '?FJ$d$$$$$$'$L~. . .$$$$$L`!!~eec``::::::::.\n"
-									   "  `::::::.```::.''$'     $$$$$$$$$.$$bKUeiz$$$$$$'!~ $$3$  `::::::::\n"
-									   "     ``````` ..: 3`beeed $$$$$$$$$$e$$Ned$$$$$$$$'u@z$5$ ::: `:::::::\n"
-									   "             ::: ^$NeeeP $$$$$$$$$$$$$$$$$$$$$$$$'$NNeP ::::::`::::::\n"
-									   "            .:::: $$$$$F $$$$$$$?$$$$$$$$$$$$$$$$ $$F .:::::::::::::\n"
-									   "           : .::: ?$$$$$ $$$$$$$?c$$$$$$$$$$$$$$F,e :::::::::::::``\n"
-									   "             ::::,`$$$$$$,)?$$X$$$$$$$$$$$?$$$$$ $$ :::::::::::``\n"
-									   "             ::':: '$$$$$$$$$$$$$$$$P?' .d$$$$$F,$$ :::::::::`\n"
-									   "             `  :::.'$$$EC''???'?Cz=d'ud$$$$$$'.$$$ :::::`:`\n"
-									   "                `:::.`?$$$bu. 4$$$??Le$$$$$$P'.$$$$ ::```\n"
-									   "                  `::: `?$$$P$beee$$$$$$$$P'.d$$$$$\n"
-									   "                          u`?$$$$$$$$$$F z$$$$$$$$Pu`$$$c.\n"
-									   "                         c^$bu?R$$$$F'ue$$$$$$$$$$ $ $$$$$$bc.\n"
-									   "                       e$$ $$$e,`'',e$$$$$$$$$$$$$$$ $$$$$$$$$'bc.\n"
-									   "                    .e$$$$ '$$$$$$$$$$$$$$$$$$$$$$$$ $$$$$$$$'d$$$$$be.\n"
-									   "                ..e$$$$$$EJ,?$$$$$$$$$$$$$$$$$$$$$$$'$$$$$$$'d$$$$$$$$$$be\n");
+						   "     ::` .:::::::``z, :::::`.e$$$$$$$$$$.`::::::::::::::::::::\n"
+						   "    :` :::::::``,e$$$r`::: $$$$??'     `?b_ `::::::::::::::::::\n"
+						   "   ' :::::::` ,?'   `?b,_` R$'     .,,.   `'iu ````:::::::::::::\n"
+						   "    ::::::`   <  .,.   `?e. $$eeee$$$F???$ee,3$c   ..````::::::::.\n"
+						   "   ::::::  ::  R$$$$$$$$e4$ $$$$$$$'e     3$$$$$.:.  ``:::::::::``:.\n"
+						   "  `:::::: :::::`$F.   '?FJ$d$$$$$$'$L~. . .$$$$$L`!!~eec``::::::::.\n"
+						   "  `::::::.```::.''$'     $$$$$$$$$.$$bKUeiz$$$$$$'!~ $$3$  `::::::::\n"
+						   "     ``````` ..: 3`beeed $$$$$$$$$$e$$Ned$$$$$$$$'u@z$5$ ::: `:::::::\n"
+						   "             ::: ^$NeeeP $$$$$$$$$$$$$$$$$$$$$$$$'$NNeP ::::::`::::::\n"
+						   "            .:::: $$$$$F $$$$$$$?$$$$$$$$$$$$$$$$ $$F .:::::::::::::\n"
+						   "           : .::: ?$$$$$ $$$$$$$?c$$$$$$$$$$$$$$F,e :::::::::::::``\n"
+						   "             ::::,`$$$$$$,)?$$X$$$$$$$$$$$?$$$$$ $$ :::::::::::``\n"
+						   "             ::':: '$$$$$$$$$$$$$$$$P?' .d$$$$$F,$$ :::::::::`\n"
+						   "             `  :::.'$$$EC''???'?Cz=d'ud$$$$$$'.$$$ :::::`:`\n"
+						   "                `:::.`?$$$bu. 4$$$??Le$$$$$$P'.$$$$ ::```\n"
+						   "                  `::: `?$$$P$beee$$$$$$$$P'.d$$$$$\n"
+						   "                          u`?$$$$$$$$$$F z$$$$$$$$Pu`$$$c.\n"
+						   "                         c^$bu?R$$$$F'ue$$$$$$$$$$ $ $$$$$$bc.\n"
+						   "                       e$$ $$$e,`'',e$$$$$$$$$$$$$$$ $$$$$$$$$'bc.\n"
+						   "                    .e$$$$ '$$$$$$$$$$$$$$$$$$$$$$$$ $$$$$$$$'d$$$$$be.\n"
+						   "                ..e$$$$$$EJ,?$$$$$$$$$$$$$$$$$$$$$$$'$$$$$$$'d$$$$$$$$$$be\n");
 			anim.extendToDown(0, 0, 0.2);
 			_getch();
 		}
