@@ -29,6 +29,7 @@
 #include<iostream>
 #include<Windows.h>
 #include<string.h>
+#include<math.h>
 
 class Animation
 {
