@@ -27,21 +27,26 @@
 */
 
 #include<iostream>
+#include <math.h>
+#ifdef WIN32
 #include<Windows.h>
+#else
+#include <ncurses.h>
+#include <unistd.h>
+#endif
 #include<string.h>
-#include<math.h>
 
 class Animation
 {
 private:
-	char* content_;
+	std::string content_;
 	int x_, y_;
 
 	void gotoxy(int, int);
 	void printContent(int, int);
 	void clearPrevContent(int, int);
 public:
-	Animation(char *);
+	Animation(std::string);
 	void translateX(int, int, int, float);
 	void translateY(int, int, int, float);
 	void wink(int, int, int, float);
@@ -54,17 +59,22 @@ public:
 
 void Animation::gotoxy(int x, int y)
 {
+#ifdef WIN32
 	COORD coord;
 	coord.X = x;
 	coord.Y = y;
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
+#else
+  printf("%c[%d;%df", 0x1B, y, x);
+#endif
+
 }
 void Animation::printContent(int x, int y)
 {
 	int line_count = 0;
 
 	gotoxy(x, y);
-	for (int i = 0; i < strlen(content_); i++)
+	for (int i = 0; i < sizeof(content_); i++)
 	{
 		if (content_[i] == '\n') // Split each row in new line (x, y + line)
 		{
@@ -80,7 +90,7 @@ void Animation::clearPrevContent(int x, int y)
 	int line_count = 0;
 
 	gotoxy(x, y);
-	for (int i = 0; i < strlen(content_); i++)
+	for (int i = 0; i < sizeof(content_); i++)
 	{
 		if (content_[i] == '\n') // Split each row in new line (x, y + line)
 		{
@@ -92,11 +102,11 @@ void Animation::clearPrevContent(int x, int y)
 	}
 }
 
-Animation::Animation(char* content)
+Animation::Animation(std::string content)
 {
-	content_ = content;
-	x_ = 0;
-	y_ = 0;
+  content_ = content;
+  x_ = 0;
+  y_ = 0;
 }
 void Animation::translateX(int start_x, int start_y, int end_x, float speed)
 {
@@ -111,7 +121,11 @@ void Animation::translateX(int start_x, int start_y, int end_x, float speed)
 
 	for (int i = 1; i <= delta_x; i++)
 	{
+#ifdef WIN32
 		Sleep(sleep_time);
+#else
+    usleep(sleep_time);
+#endif
 		clearPrevContent(x_, start_y); // Clear previous place of content
 
 		x_ += sign;
@@ -131,7 +145,11 @@ void Animation::translateY(int start_x, int start_y, int end_y, float speed)
 
 	for (int i = 1; i <= delta_y; i++)
 	{
+#ifdef WIN32
 		Sleep(sleep_time);
+#else
+    usleep(sleep_time);
+#endif
 		clearPrevContent(start_x, y_); // Clear previous place of content
 
 		y_ += sign;
@@ -150,10 +168,18 @@ void Animation::wink(int x, int y, int count, float speed)
 	for (int i = 0; i < count; i++)
 	{
 		clearPrevContent(x, y); // Clear content in (x, y) place
+#ifdef WIN32
 		Sleep(sleep_time);
+#else
+    usleep(sleep_time);
+#endif
 
 		printContent(x, y); // Print content in (x, y) place
+#ifdef WIN32
 		Sleep(sleep_time);
+#else
+    usleep(sleep_time);
+#endif
 	}
 }
 void Animation::colorize(int x, int y, int count, float speed)
@@ -163,22 +189,37 @@ void Animation::colorize(int x, int y, int count, float speed)
 	y_ = y;
 	int sleep_time = round(speed * 1000); // Set time in Milisecond
 	int color_number = 0;
+#ifdef WIN32
 	HANDLE outcon = GetStdHandle(STD_OUTPUT_HANDLE);
+#endif
 
 	printContent(x, y); // Print content at first time
 
 	for (int i = 0; i < count; i++)
 	{
+#ifdef WIN32
 		Sleep(sleep_time);
+#else
+    usleep(sleep_time);
+#endif
+
+#ifdef WIN32
 		SetConsoleTextAttribute(outcon, color_number);
-		printContent(x, y); // Print content in (x, y) place
+#else
+    std::cout << "\033[" << "00" << ";" << color_number <<"m"; // Set text color on gcc (linux)
+#endif
+
+    printContent(x, y); // Print content in (x, y) place
 
 		color_number++;
 		if (color_number > 15) // Color range between [0 ... F]
 			color_number = 0;
 	}
-	
+#ifdef WIN32
 	SetConsoleTextAttribute(outcon, 7); // Change color to default white
+#else
+  std::cout << "\033[" << "00" << ";" << "37" <<"m"; // Set text color on gcc (linux)
+#endif
 }
 void Animation::extend(int x, int y, float speed)
 {
@@ -189,9 +230,13 @@ void Animation::extend(int x, int y, float speed)
 	int line_count = 0;
 
 	gotoxy(x, y);
-	for (int i = 0; i < strlen(content_); i++)
+	for (int i = 0; i < sizeof(content_); i++)
 	{
+#ifdef WIN32
 		Sleep(sleep_time);
+#else
+    usleep(sleep_time);
+#endif
 
 		if (content_[i] == '\n') // Split each row in new line (x, y + line)
 		{
@@ -211,11 +256,15 @@ void Animation::extendToDown(int x, int y, float speed)
 	int line_count = 0;
 
 	gotoxy(x, y);
-	for (int i = 0; i < strlen(content_); i++)
+	for (int i = 0; i < sizeof(content_); i++)
 	{
 		if (content_[i] == '\n') // Split each row in new line (x, y + line)
 		{
-			Sleep(sleep_time);
+#ifdef WIN32
+	  	Sleep(sleep_time);
+#else
+      usleep(sleep_time);
+#endif
 
 			++line_count;
 			gotoxy(x, y + line_count);
