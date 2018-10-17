@@ -12,7 +12,7 @@ With conanim, you can set animation and use it in your console application proje
 
 ### Add header file
 
-It's very simple. Add conanim.h to your Header Files folder. Then include header file by using #include"conanim.h" at the top of your C++ program.
+It's very simple. Add `conanim.h` and `conanim.cpp` to your Header Files folder. Then include header file by using #include"conanim.h" at the top of your C++ program.
 
 ### Set animation
 
